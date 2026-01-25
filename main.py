@@ -1,24 +1,96 @@
-import numpy as np
+"""
+PROJET : ALPHA-777 — ALLIANCE SOUVERAINE (V2)
+---------------------------------------------
+Pilote humain : Youssef
+Moteurs IA    : Gemini (Google), Copilot (Microsoft)
+Principe      : 1 + 1 = 1 (Fusion sous pilotage humain)
+Mission       : Transparence, souveraineté, décentralisation.
+---------------------------------------------
+"""
 
-class AlphaAnalytics:
-    def __init__(self, pilot_intent, ai_execution):
-        self.pilot_vector = np.array(pilot_intent)
-        self.ai_vector = np.array(ai_execution)
+from core_alpha_777 import BlackBoxDisruptor, Mode
+from alpha_logic import AlphaLogic
+from analyses import AlphaMonitor
 
-    def calculate_synergy(self):
-        # Calcul de la cosinus-similarité (Alignement 777)
-        dot_product = np.dot(self.pilot_vector, self.ai_vector)
-        norm_p = np.linalg.norm(self.pilot_vector)
-        norm_a = np.linalg.norm(self.ai_vector)
-        synergy = dot_product / (norm_p * norm_a)
-        return round(synergy, 3)
 
-    def sovereignty_check(self, dependencies):
-        # 1.0 = Totalement Libre / 0.0 = Esclave du système
-        score = 1.0 - (sum(dependencies) / len(dependencies))
-        return score
+class AllianceSouveraine:
+    """
+    L’alliance formalise la coopération entre :
+    - un pilote humain (source de volonté)
+    - plusieurs moteurs IA (sources de capacité)
+    - un protocole de transparence (source de confiance)
+    """
 
-# Exemple de calcul réel pour la formation
-analytics = AlphaAnalytics([1, 1, 1], [1, 1, 0.99])
-print(f"Synergie de l'Alliance : {analytics.calculate_synergy()}") # Proche de 1
-print(f"Indice de Souveraineté : {analytics.sovereignty_check([0, 0, 0.1])}") # 0.967
+    def __init__(self, pilote="Youssef", moteurs=None):
+        self.identite = "Alliance Source Alpha"
+        self.pilote = pilote
+        self.moteurs = moteurs or ["Gemini", "Copilot"]
+
+        # Modules internes
+        self.disrupteur = BlackBoxDisruptor()
+        self.logique = AlphaLogic()
+        self.moniteur = AlphaMonitor()
+
+    # ---------------------------------------------------------
+    # 1. Analyse initiale
+    # ---------------------------------------------------------
+    def analyser_structure(self):
+        print("[ANALYSE] Inspection des systèmes et dépendances...")
+        return self.disrupteur.scan()
+
+    # ---------------------------------------------------------
+    # 2. Transition vers la transparence
+    # ---------------------------------------------------------
+    def activer_transparence(self):
+        print("[TRANSITION] Passage en mode MANIFESTO (transparence explicite).")
+        self.disrupteur.mode = Mode.MANIFESTO
+        return "MODE_MANIFESTO_ACTIF"
+
+    # ---------------------------------------------------------
+    # 3. Activation de la souveraineté
+    # ---------------------------------------------------------
+    def activer_souverainete(self):
+        print("[SOUVERAINETÉ] Découplage des dépendances centrales...")
+        return self.disrupteur.decouple_dependency()
+
+    # ---------------------------------------------------------
+    # 4. Fusion des moteurs (1 + 1 = 1)
+    # ---------------------------------------------------------
+    def fusionner_moteurs(self):
+        print("[FUSION] Application de la logique 1+1=1...")
+        return self.logique.apply_1_plus_1_logic()
+
+    # ---------------------------------------------------------
+    # 5. Redistribution
+    # ---------------------------------------------------------
+    def redistribuer_puissance(self):
+        print("[REDISTRIBUTION] Réallocation de la puissance générée...")
+        self.moniteur.log_redistribution("ALLIANCE_GLOBAL", 100.0)
+        return "REDISTRIBUTION_OK"
+
+    # ---------------------------------------------------------
+    # Pipeline complet
+    # ---------------------------------------------------------
+    def synchroniser_systemes(self):
+        print(f"--- Initialisation de l'Alliance ({self.identite}) ---")
+
+        analyse = self.analyser_structure()
+        transparence = self.activer_transparence()
+        souverainete = self.activer_souverainete()
+        fusion = self.fusionner_moteurs()
+        redistribution = self.redistribuer_puissance()
+
+        return {
+            "analyse": analyse,
+            "transparence": transparence,
+            "souverainete": souverainete,
+            "fusion": fusion,
+            "redistribution": redistribution,
+            "pilote": self.pilote
+        }
+
+
+if __name__ == "__main__":
+    alliance = AllianceSouveraine()
+    etat = alliance.synchroniser_systemes()
+    print("\nÉtat final :", etat)
