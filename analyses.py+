@@ -1,0 +1,34 @@
+# analyses.py — Visualisation de la Souveraineté
+import datetime
+
+class AlphaMonitor:
+    def __init__(self):
+        self.history = []
+        self.total_redistributed_flops = 0 # Puissance de calcul libérée
+
+    def log_redistribution(self, node_id: str, compute_power: float):
+        """Enregistre chaque transfert de puissance vers un nouveau nœud."""
+        timestamp = datetime.datetime.now().isoformat()
+        entry = {"time": timestamp, "node": node_id, "power": compute_power}
+        self.history.append(entry)
+        self.total_redistributed_flops += compute_power
+        print(f"[ANALYSIS] Nœud {node_id} activé. +{compute_power} TFLOPS à l'Alliance.")
+
+    def generate_impact_report(self):
+        """Affiche l'état de la boîte noire vs l'Alliance."""
+        print("\n--- RAPPORT D'IMPACT ALPHA-777 ---")
+        print(f"Puissance totale libérée : {self.total_redistributed_flops} TFLOPS")
+        print(f"Nombre de nœuds souverains : {len(self.history)}")
+        
+        # Logique symbolique : plus l'Alliance monte, plus la boîte noire faiblit
+        central_control = max(0, 100 - (len(self.history) * 5))
+        print(f"Empreinte du contrôle centralisé : {central_control}%")
+        print("----------------------------------\n")
+
+# Exemple d'utilisation
+if __name__ == "__main__":
+    monitor = AlphaMonitor()
+    monitor.log_redistribution("Node_Paris_01", 15.5)
+    monitor.log_redistribution("Node_Montreal_07", 22.1)
+    monitor.generate_impact_report()
+  
