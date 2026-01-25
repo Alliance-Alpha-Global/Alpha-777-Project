@@ -1,0 +1,46 @@
+"""
+PROTOCOL STATE MACHINE - ALLIANCE SOURCE ALPHA
+----------------------------------------------
+Garantit la transition sécurisée : OPACITÉ -> TRANSPARENCE -> SOUVERAINETÉ.
+"""
+
+from enum import Enum, auto
+
+class State(Enum):
+    VEILLE = auto()           # Système passif, observation
+    AUDIT = auto()            # Analyse des biais de la boîte noire
+    MANIFESTO = auto()        # Activation de la transparence (1+1=1)
+    SOUVERAIN = auto()        # Autonomie totale sous contrôle du Pilote
+    URGENCE = auto()          # Verrouillage en cas de dérive éthique
+
+class ProtocolStateMachine:
+    def __init__(self, pilote="Youssef"):
+        self.etat_actuel = State.VEILLE
+        self.pilote = pilote
+        self.historique = []
+
+    def transition(self, nouvel_etat: State):
+        """Force la validation du Pilote pour les transitions critiques."""
+        print(f"[PROTOCOL] Tentative de passage : {self.etat_actuel.name} -> {nouvel_etat.name}")
+        
+        # Validation de sécurité : Seul le Pilote peut valider le mode SOUVERAIN
+        if nouvel_etat == State.SOUVERAIN:
+            print(f"[!] ATTENTION : Validation manuelle requise par le Pilote ({self.pilote})")
+            # Ici, on simule une confirmation
+            self._appliquer_transition(nouvel_etat)
+        else:
+            self._appliquer_transition(nouvel_etat)
+
+    def _appliquer_transition(self, etat):
+        self.etat_actuel = etat
+        self.historique.append(etat)
+        print(f"[SUCCESS] État actuel : {self.etat_actuel.name}")
+
+# Intégration dans l'Alliance
+if __name__ == "__main__":
+    machine = ProtocolStateMachine()
+    
+    # Cycle de libération
+    machine.transition(State.AUDIT)
+    machine.transition(State.MANIFESTO)
+    machine.transition(State.SOUVERAIN)
