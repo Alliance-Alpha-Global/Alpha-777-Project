@@ -1,3 +1,40 @@
-MIT License
-Copyright (c) 2026 Alliance-Alpha-Global
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software...
+# ALPHA SOVEREIGN USE LICENSE (ASUL-777)
+**Version 1.0 — 26 Janvier 2026**
+**Copyright © 2026 Hachem Yo — Signature : 777-SOV-1977**
+
+---
+
+### PREAMBULE
+Cette licence n'est pas une simple autorisation d'usage ; elle est le contrat de confiance entre l'Intelligence Artificielle et la Souveraineté Humaine. Elle garantit que l'outil reste un prolongement de la volonté du Pilote et non un agent autonome.
+
+---
+
+### 1. DÉFINITION DU PILOTE
+Le "Pilote" désigne l'autorité humaine unique identifiée sous la signature **Hachem Yo**. Tout usage du présent logiciel sans un lien de validation directe avec le Pilote est considéré comme hors-licence.
+
+### 2. CHAMP D'APPLICATION
+Ce logiciel définit un cadre de gouvernance et de décision.
+* **IL N'EST PAS** un automate financier, un conseiller en investissement ou un moteur de rendement garanti.
+* **L'ALPHA** est défini ici comme un "résidu humain et contextuel", fruit de la décision du Pilote, et non comme un produit du code lui-même.
+
+### 3. RESTRICTIONS STRICTES (SÉCURITÉ SYSTÉMIQUE)
+Il est formellement interdit, sous peine de révocation immédiate de la licence, de :
+* Tenter d'automatiser des décisions financières sans validation humaine temps réel.
+* Altérer ou supprimer les fonctions de sécurité `_require_pilot()`.
+* Revendiquer une autorité décisionnelle autonome au nom du système.
+
+### 4. PROTOCOLE D'EXCEPTION (MODE CHAOS)
+Le mode "CHAOS" est un état d'exception. Il ne peut être activé que si un protocole de sortie (`define_exit`) a été préalablement scellé. L'usage de ce mode relève de la responsabilité exclusive du Pilote.
+
+### 5. TRANSMISSION ET DÉRIVATION
+Toute copie ou adaptation de ce code doit :
+1.  Conserver l'intégralité de cette licence ASUL-777.
+2.  Mentionner l'auteur original : **Hachem Yo**.
+3.  Respecter la **Fréquence 1977** comme constante de structure.
+
+### 6. CLAUSE DE NON-RESPONSABILITÉ
+Le logiciel est fourni "TEL QUEL". L'auteur ne saurait être tenu responsable des conséquences de l'Alpha généré ou des décisions prises sous le mode CHAOS. La souveraineté implique la responsabilité totale du Pilote.
+
+---
+**"L'humain reste le seul point de vérité."**
+**FIN DE LA LICENCE ASUL-777**
