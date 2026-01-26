@@ -1,0 +1,96 @@
+# =========================================
+# ALPHA-777 — SOVEREIGN INTERFACE CORE
+# Rôle : Cadre de gouvernance & décision
+# Date : 26 Janvier 2026
+# =========================================
+
+class Alpha777Interface:
+    """
+    Ce noyau ne génère pas de rendement.
+    Il structure la décision, borne le risque,
+    et protège la souveraineté du Pilote.
+    """
+
+    def __init__(self):
+        self.signature = "777-SOV-1977"
+        self.frequency = 1977              # Cadre symbolique
+        self.modes = ["STEALTH", "CHAOS", "LIBERATION"]
+        self.active_mode = "STEALTH"
+        self.status = "ACTIVE"
+
+        self.pilot_validated = False
+        self.exit_defined = False
+
+    # -------------------------
+    # Souveraineté
+    # -------------------------
+    def validate_pilot(self):
+        self.pilot_validated = True
+
+    def revoke_pilot(self):
+        self.pilot_validated = False
+
+    def _require_pilot(self):
+        if not self.pilot_validated:
+            raise PermissionError("Action bloquée : validation Pilote requise")
+
+    # -------------------------
+    # Modes
+    # -------------------------
+    def set_mode(self, mode):
+        self._require_pilot()
+        if mode not in self.modes:
+            raise ValueError("Mode inconnu")
+
+        if mode == "CHAOS" and not self.exit_defined:
+            raise RuntimeError("CHAOS interdit : sortie non définie")
+
+        self.active_mode = mode
+        return f"MODE ACTIF : {self.active_mode}"
+
+    def define_exit(self, description):
+        """
+        Sortie explicite avant toute phase CHAOS
+        """
+        self.exit_defined = True
+        return f"SORTIE VALIDÉE : {description}"
+
+    # -------------------------
+    # Signal (pas alpha)
+    # -------------------------
+    def evaluate_signal(self, edge_score):
+        """
+        edge_score = observation mesurée (backtest, stats, biais)
+        Le système n'amplifie rien, il qualifie.
+        """
+        self._require_pilot()
+
+        if self.status != "ACTIVE":
+            return "SYSTÈME INACTIF"
+
+        if edge_score <= 0:
+            return "SIGNAL FAIBLE — AUCUNE ACTION"
+
+        return {
+            "mode": self.active_mode,
+            "edge_score": edge_score,
+            "decision_required": True
+        }
+
+    # -------------------------
+    # Kill Switch
+    # -------------------------
+    def kill_switch(self, reason):
+        self.status = "HALTED"
+        self.active_mode = "STEALTH"
+        self.revoke_pilot()
+        return f"SYSTÈME ARRÊTÉ — {reason}"
+
+
+# -----------------------------------------
+# PRINCIPE FONDAMENTAL
+# -----------------------------------------
+# - Le système n'exécute rien seul
+# - L'alpha est un résidu, pas une commande
+# - CHAOS est un état exceptionnel, jamais un défaut
+# - Le Pilote reste le seul point de vérité
