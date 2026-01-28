@@ -1,0 +1,10 @@
+Alpha-777-Project/
+│
+├── authority/
+├── core/
+├── node/
+├── protocol/
+│   └── specs/
+│       └── alpha777-core-spec-v1.md
+│
+└── README.md
